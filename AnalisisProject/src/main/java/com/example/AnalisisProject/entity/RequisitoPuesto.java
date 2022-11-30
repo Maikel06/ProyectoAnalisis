@@ -1,32 +1,34 @@
 package com.example.AnalisisProject.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
-public class Requisito_Puesto {
-
+public class RequisitoPuesto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_Requisito;
+    private int id;
+    @Column(name = "requerido", columnDefinition = "default bit 1")
     private  boolean requerido;
+    @Column(name = "detalle")
     private String detalle;
 
-
-    public Requisito_Puesto(int id_requisito, boolean requerido, String detalle) {
-        setId_Requisito(id_requisito);
+    public RequisitoPuesto(int id, boolean requerido, String detalle) {
+        this.setId(id);
         this.setRequerido(requerido);
         this.setDetalle(detalle);
     }
 
-    public int getId_Requisito() {
-        return id_Requisito;
+    //clase a y clase b, a esta asociado con una b, y b con muchas a, many to one
+
+    public RequisitoPuesto() {
     }
 
-    public void setId_Requisito(int id_Requisito) {
-        this.id_Requisito = id_Requisito;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public boolean isRequerido() {

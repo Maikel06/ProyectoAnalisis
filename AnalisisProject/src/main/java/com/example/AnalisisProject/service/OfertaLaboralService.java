@@ -1,23 +1,22 @@
 package com.example.AnalisisProject.service;
 
-import com.example.AnalisisProject.entity.Oferta_Laboral;
+import com.example.AnalisisProject.entity.OfertaLaboral;
+import com.example.AnalisisProject.repository.OfertaLaboralRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import javax.transaction.Transactional;
-import com.example.AnalisisProject.repository.OfertaLaboralRepository;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
 @Transactional
 public class OfertaLaboralService {
-
     @Autowired
     private OfertaLaboralRepository repository;
 
-    public List<Oferta_Laboral> listAll() { return repository.findAll(); }
+    public List<OfertaLaboral> listAll() { return repository.findAll(); }
 
-    public void save(Oferta_Laboral ofertaLaboral) { repository.save(ofertaLaboral); }
+    public void save(OfertaLaboral ofertaLaboral) { repository.save(ofertaLaboral); }
 
-    public Oferta_Laboral get(int id) { return repository.findById(id).get(); }
+    public OfertaLaboral get(int id) { return repository.findById(id).get(); }
 }

@@ -1,9 +1,9 @@
 package com.example.AnalisisProject.service;
 
 import com.example.AnalisisProject.entity.Organizacion;
+import com.example.AnalisisProject.repository.OrganizacionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.example.AnalisisProject.repository.OrganizacionRepository;
 
 import javax.transaction.Transactional;
 import java.util.List;

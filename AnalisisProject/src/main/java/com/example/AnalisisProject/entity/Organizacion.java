@@ -1,33 +1,37 @@
 package com.example.AnalisisProject.entity;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
+@Entity
 public class Organizacion {
 
-    private int id_Organizacion;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    @Column(name = "nombre")
     private String nombre;
+    @Column(name = "correo")
     private String correo;
+    @Column(name = "telefono")
     private String telefono;
 
-    @ManyToOne
-    @JoinColumn(name = "Oferta_Laboral_Id")
-    private Oferta_Laboral oferta_laboral;
+    public Organizacion() {
 
-    public Organizacion(int id_organizacion, String nombre, String correo, String telefono, Oferta_Laboral oferta_laboral) {
-        setId_Organizacion(id_organizacion);
+    }
+
+    public Organizacion(int id, String nombre, String correo, String telefono) {
+        this.setId(id);
         this.setNombre(nombre);
         this.setCorreo(correo);
         this.setTelefono(telefono);
-        this.setOferta_laboral(oferta_laboral);
     }
 
-    public int getId_Organizacion() {
-        return id_Organizacion;
+    public int getId() {
+        return id;
     }
 
-    public void setId_Organizacion(int id_Organizacion) {
-        this.id_Organizacion = id_Organizacion;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -52,13 +56,5 @@ public class Organizacion {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
-    }
-
-    public Oferta_Laboral getOferta_laboral() {
-        return oferta_laboral;
-    }
-
-    public void setOferta_laboral(Oferta_Laboral oferta_laboral) {
-        this.oferta_laboral = oferta_laboral;
     }
 }
