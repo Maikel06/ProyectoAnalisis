@@ -1,5 +1,6 @@
 package com.example.AnalisisProject.controller;
 
+import com.example.AnalisisProject.entity.OfertaLaboral;
 import com.example.AnalisisProject.entity.RequisitoPuesto;
 import com.example.AnalisisProject.service.RequisitoPuestoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,5 +31,9 @@ public class RequisitoPuestoController {
         } catch (NoSuchElementException e) {
             return new ResponseEntity<RequisitoPuesto>(HttpStatus.NOT_FOUND);
         }
+    }
+    @PutMapping(value = "/update")
+    public void update(@RequestBody RequisitoPuesto requisitoPuesto){
+        service.save(requisitoPuesto);
     }
 }

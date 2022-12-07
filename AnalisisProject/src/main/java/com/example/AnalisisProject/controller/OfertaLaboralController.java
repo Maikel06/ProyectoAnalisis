@@ -31,7 +31,6 @@ public class OfertaLaboralController {
             return new ResponseEntity<OfertaLaboral>(HttpStatus.NOT_FOUND);
         }
     }
-
     @PutMapping(value = "/update")
     public void update(@RequestBody OfertaLaboral ofertaLaboral){
         service.save(ofertaLaboral);
