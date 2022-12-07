@@ -12,6 +12,7 @@ import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping(path = "/api/ofertaLaboral")
+@CrossOrigin(origins = "http://localhost:4200")
 public class OfertaLaboralController {
     @Autowired
     private OfertaLaboralService service;

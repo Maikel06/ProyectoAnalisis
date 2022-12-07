@@ -1,6 +1,7 @@
 package com.example.AnalisisProject.entity;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Organizacion {
@@ -57,4 +58,5 @@ public class Organizacion {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+
 }

@@ -12,13 +12,19 @@ public class RequisitoPuesto {
     @Column(name = "detalle")
     private String detalle;
 
-    public RequisitoPuesto(int id, boolean requerido, String detalle) {
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "ofertaLaboral_id")
+    private OfertaLaboral ofertaLaboral;
+
+
+
+    public RequisitoPuesto(int id, boolean requerido, String detalle, OfertaLaboral ofertaLaboral) {
+        this.setOfertaLaboral(ofertaLaboral);
         this.setId(id);
         this.setRequerido(requerido);
         this.setDetalle(detalle);
     }
 
-    //clase a y clase b, a esta asociado con una b, y b con muchas a, many to one
 
     public RequisitoPuesto() {
     }
@@ -46,4 +52,14 @@ public class RequisitoPuesto {
     public void setDetalle(String detalle) {
         this.detalle = detalle;
     }
+
+    public OfertaLaboral getOfertaLaboral() {
+        return ofertaLaboral;
+    }
+
+    public void setOfertaLaboral(OfertaLaboral ofertaLaboral) {
+        this.ofertaLaboral = ofertaLaboral;
+    }
+
+
 }

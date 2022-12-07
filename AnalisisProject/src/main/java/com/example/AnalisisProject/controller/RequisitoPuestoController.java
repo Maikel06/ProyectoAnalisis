@@ -12,6 +12,7 @@ import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping(path = "/api/requisito")
+@CrossOrigin(origins = "http://localhost:4200")
 public class RequisitoPuestoController {
     @Autowired
     private RequisitoPuestoService service;
